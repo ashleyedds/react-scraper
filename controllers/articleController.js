@@ -1,4 +1,4 @@
-const Article = require('../models/article');
+const Article = require('../models/Article');
 
 // Defining methods for the main controller
 module.exports = {
