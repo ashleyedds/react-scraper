@@ -6,8 +6,7 @@ router.route('/')
     .post(articleController.create);
 
 
-router
-    .route("/:id")
+router.route("/:id")
     .delete(articleController.remove);
 
 module.exports = router;

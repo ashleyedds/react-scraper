@@ -29,14 +29,15 @@ class Articles extends Component {
         .catch( err => console.log(err) );
     }
 
-    saveArticle = articleInfo => {
-        API.saveArticle(articleInfo)
-        .then(res => this.loadArticles())
-        .catch(err => console.log(err));
-    };
+    saveArticle = (articleInfo) => {
+        console.log(articleInfo);
+            API.saveArticle(articleInfo)
+            .then(res => this.loadArticles())
+            .catch(err => console.log(err));
+        }
 
     deleteArticle = id => {
-        API.removeArticle(id)
+        API.deleteArticle(id)
         .then(res => this.loadArticles())
         .catch(err => console.log(err));
     }
@@ -62,8 +63,7 @@ class Articles extends Component {
                 searchTerm: '',
                 startYear: '',
                 endYear: ''
-            })
-            console.log(this.state.articles[0].multimedia[0].url);
+            });
             })
             .catch( err => console.log(err) );
     }
@@ -127,7 +127,6 @@ class Articles extends Component {
                                     url={article.web_url}
                                     headline={article.headline.main}
                                     summary={article.snippet}
-                                    date={article.pub_date}
                                     click={this.saveArticle}
                                     title="Add article"
                                     icon="save"
@@ -150,14 +149,15 @@ class Articles extends Component {
                                     <ListItem
                                     key={savedArticle._id}
                                     _id={savedArticle._id}
-                                    url={savedArticle.web_url}
-                                    headline={savedArticle.headline.main}
-                                    summary={savedArticle.snippet}
-                                    image="https://placehold.it//210x140"
-                                    date={savedArticle.pub_date}
-                                    click={this.removeArticle}
-                                    title="Remove article"
-                                    icon="remove"
+                                    url={savedArticle.url}
+                                    headline={savedArticle.headline}
+                                    summary={savedArticle.summary}
+                                    byline={savedArticle.byline}
+                                    image={savedArticle.image}
+                                    date={savedArticle.date}
+                                    click={this.deleteArticle}
+                                    title="Delete article"
+                                    icon="delete"
                                 />
                                 ))}
                             </List>

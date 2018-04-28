@@ -19,9 +19,10 @@ export default {
     },
 
     deleteArticle: articleInfo => {
-        return axios.delete("/api/saved" + articleInfo._id)
+        return axios.delete("/api/saved/" + articleInfo._id)
     },
-    saveArticle: function (articleInfo) {
+    saveArticle: function(articleInfo) {
+        console.log(articleInfo);
         return axios.post("/api/saved", articleInfo);
-    }
+        }
 }

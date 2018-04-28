@@ -6,7 +6,7 @@ export const ListItem = props => (
     <div className="collection-text">
         <a href={props.url} target="_blank"><span className="title">{props.headline}</span></a>
         <p>{props.summary}<br />
-        <span className="collection-byline">{props.byline}</span><br />
+        <br />
         </p>
     </div>
     <Button {...props} />
