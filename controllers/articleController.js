@@ -1,24 +1,27 @@
-const db = require("../models");
+const Article = require('../models/article');
 
+// Defining methods for the main controller
 module.exports = {
-    findAll: (req, res) => {
-        Article
+    findAll: function(req, res) {
+    Article
         .find(req.query)
-        .sort({ date: -1 })
+        .sort({ savedDate: -1 })
         .then(data => res.json(data))
-        .catch(err => console.log(err));
+        .catch(err => res.status(422).json(err));
     },
-    create: (req, res) => {
-        Article
+    create: function(req, res) {
+    Article
         .create(req.body)
         .then(data => res.json(data))
-        .catch(err => console.log(err));
+        .catch(err => res.status(422).json(err));
     },
-    delete: (req, res) => {
-        Article
+    remove: function(req, res) {
+    Article
         .findById({ _id: req.params.id })
         .then(data => data.remove())
         .then(data => res.json(data))
-        .catch(err => console.log(err));
+        .catch(err => res.status(422).json(err));
     }
-}
+};
+
+

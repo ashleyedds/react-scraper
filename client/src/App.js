@@ -1,24 +1,16 @@
-import React, { Component } from 'react';
-import Search from "./components/Form";
-import Results from "./components/Results";
-import Saved from "./components/Saved";
-import { Container, Jumbotron } from "reactstrap";
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Articles from "./pages/Articles";
 
-class App extends Component {
-  render() {
-    return (
-      <Container>
-        <Jumbotron>
-          <h1>New York Times Scraper</h1>
-          <h3>Search for and annotate articles of interest</h3>
-        </Jumbotron>
-        <Search />
-        <Results />
-        <Saved />
-      </Container>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Articles} />
+        <Route exact path="/saved" component={Articles} />
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;
