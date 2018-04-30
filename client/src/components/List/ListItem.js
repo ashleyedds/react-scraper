@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from "./";
+import "./List.css";
 
 export const ListItem = props => (
     <li className="collection-item avatar">

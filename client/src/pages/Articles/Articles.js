@@ -6,6 +6,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
 import { Card, CardHeader, CardBody } from "reactstrap";
+import "./Articles.css";
 
 class Articles extends Component {
     state = {
@@ -70,17 +71,14 @@ class Articles extends Component {
 
     render() {
         return(
-            <Container fluid>
-                <Row>
-                    <Col size="s=12">
+            <Container>
                         <Jumbotron>
                             <h1>New York Times Article Scrubber</h1>
                             <h2>Search and save articles of interest</h2>
                         </Jumbotron>
-                    </Col>
-                </Row>
                 <Row>
                 <Col size="s=12">
+                    <Card className="searchBox">
                     <CardHeader>Search for Articles</CardHeader>
                     <CardBody>
                         <form>
@@ -112,10 +110,12 @@ class Articles extends Component {
                             </FormBtn>
                         </form>
                     </CardBody>
+                    </Card>
                 </Col>
             </Row>
             <Row>
                 <Col size="s=12">
+                    <Card>
                     <CardHeader>Results</CardHeader>
                     <CardBody>
                         {this.state.articles.length ? (
@@ -137,10 +137,12 @@ class Articles extends Component {
                             <h3>No results to display</h3>
                         )}  
                     </CardBody>
+                    </Card>
                 </Col>
             </Row>
             <Row>
                 <Col size="s=12">
+                    <Card>
                     <CardHeader>Saved Articles</CardHeader>
                     <CardBody>
                     {this.state.savedArticles.length ? (
@@ -165,6 +167,7 @@ class Articles extends Component {
                             <h3>No saved articles</h3>
                         )} 
                     </CardBody>
+                    </Card>
                 </Col>
             </Row>
             </Container>

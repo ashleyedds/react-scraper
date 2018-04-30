@@ -1,0 +1,13 @@
+.searchBox {
+    width: 40vw;
+}
+
+.card {
+    font-family: "Times New Roman", Times, serif; 
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.card-header {
+    font-size: 30px;
+}

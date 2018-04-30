@@ -1,0 +1,17 @@
+.jumbotron {
+    background-image: url(newspaper.jpg);
+    background-size: cover;
+    background-position: center; 
+    height: 400px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}

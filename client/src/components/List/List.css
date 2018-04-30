@@ -1,0 +1,9 @@
+li {
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+.button, .btn-primary {
+    position: relative;
+    bottom: 20px;
+}
